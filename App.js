@@ -13,7 +13,7 @@ const DATA = [
 export default function App() {  
 
   const renderCard = (item) => {
-    return(
+    return (
       <Card
         key={item.id}        
         image={{ uri: item.uri }}        
@@ -32,21 +32,20 @@ export default function App() {
             />          
       </Card>      
     )
-  }  
+  }
 
   const renderNoMoreCards = () => {
-    return (
-      <Card title="All Done!">
-        <Text style={{ marginBottom:10 }}>
-          There's no more content here!
-        </Text>
-        <Button 
-          backgroundColor="#03A9F4"
-          title="Get more!"></Button>
-      </Card>
-    )
-}
-  
+      return (
+        <Card title="All Done!">
+          <Text style={{ marginBottom:10 }}>
+            There's no more content here!
+          </Text>
+          <Button 
+            backgroundColor="#03A9F4"
+            title="Get more!"></Button>
+        </Card>
+      )
+  }  
 
   return (
     <View style={styles.container}>
