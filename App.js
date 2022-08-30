@@ -43,7 +43,7 @@ export default function App() {
     <View style={styles.container}>
       <Deck
         data={DATA}
-        renderCard={renderCard}
+        renderCard={renderCard}        
       />
     </View>
   );
