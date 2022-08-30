@@ -8,11 +8,6 @@ const DATA = [
   { id: 1, text: 'Card #1', uri: 'https://postfiles.pstatic.net/MjAyMjA4MDdfMjU4/MDAxNjU5ODU2ODI5MjI3.D5I6eW-Gu6LfgsaOHg6ZwnJ40bhfrJ4tEMBta9SAKNYg.Lf3ShnyNeD5K4KCGhWtT3egBYlNT-stbFYedkGyR_2gg.JPEG.bugkingus/20220806_123505.jpg?type=w773' },
   { id: 2, text: 'Card #2', uri: 'https://postfiles.pstatic.net/MjAyMjA4MDdfMjg5/MDAxNjU5ODU2ODI5NDM1.3KGFnKHKTiMLYFC0t6wXQGiCMfY76ne1JEfmKB_TOX8g.cGFmTV1GhMIZ6Z_xWmDacwRHtHVb7V2hOu4612Td9CQg.JPEG.bugkingus/20220806_125005.jpg?type=w773' },
   { id: 3, text: 'Card #3', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg' },
-  { id: 4, text: 'Card #4', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg' },
-  { id: 5, text: 'Card #5', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
-  { id: 6, text: 'Card #6', uri: 'http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg' },
-  { id: 7, text: 'Card #7', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg' },
-  { id: 8, text: 'Card #8', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg' },
 ];
 
 export default function App() {  
@@ -37,13 +32,28 @@ export default function App() {
             />          
       </Card>      
     )
-  }
+  }  
+
+  const renderNoMoreCards = () => {
+    return (
+      <Card title="All Done!">
+        <Text style={{ marginBottom:10 }}>
+          There's no more content here!
+        </Text>
+        <Button 
+          backgroundColor="#03A9F4"
+          title="Get more!"></Button>
+      </Card>
+    )
+}
+  
 
   return (
     <View style={styles.container}>
       <Deck
         data={DATA}
         renderCard={renderCard}        
+        renderNoMoreCards={renderNoMoreCards}
       />
     </View>
   );
